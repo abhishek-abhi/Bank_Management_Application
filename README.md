@@ -1,4 +1,4 @@
-# Banking_Application
+# Bank_Management_Application
 
 <hr><strong>Developed and Designed By</strong>:  <strong>Abhishek Kumar Mandal</strong>
 
