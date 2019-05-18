@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="common/header :: common-header"/>
+<body roleId="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+<head th:replace="common/header :: navbar"/>
+<div class="container main">
+    <div class="row">
+        <div class="col-md-6">
+            <form th:action="@{/transfer}" method="post">
+                
+                <div class="form-group">
+                    <label>2. Please Enter your Account Number: </label>
+                    <span class="input-group-addon">Account Number </span>
+                    <input th:value="${firstAccountNumber}" type="text" name="firstAccountNumber" id="firstAccountNumber" class="form-control" aria-label="Account Number"/>
+                </div>
+
+                <div class="form-group">
+                    <label>2. Please Enter recipient Account Number: </label>
+                    <span class="input-group-addon">Account Number </span>
+                    <input th:value="${secondAccountNumber}" type="text" name="secondAccountNumber" id="secondAccountNumber" class="form-control" aria-label="Account Number"/>
+                </div>
+
+                <div class="form-group">
+                    <label>3. Please specify the amount you would like to transfer: </label>
+                    <span class="input-group-addon">Amount $</span>
+                    <input th:value="${amount}" type="text" name="amount" id="amount" class="form-control" aria-label="Amount (to the nearest dollar)"/>
+                </div>
+
+                <input type="hidden"
+                       name="${_csrf.parameterName}"
+                       value="${_csrf.token}"/>
+
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Transfer</button>
+            </form>
+
+            <div class="col-md-6">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div th:replace="common/header :: body-bottom-scripts"/>
+
+</body>
+</html>
